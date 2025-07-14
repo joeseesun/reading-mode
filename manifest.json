@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Reading Mode",
+  "version": "1.0.0",
+  "description": "Transform web pages into clean reading mode with 'aa' shortcut",
+  
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["site-config.js", "content.js"],
+      "css": ["reading-mode.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "commands": {
+    "toggle-reading-mode": {
+      "suggested_key": {
+        "default": "Alt+A",
+        "mac": "Command+A"
+      },
+      "description": "Toggle reading mode"
+    }
+  },
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Toggle Reading Mode"
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
