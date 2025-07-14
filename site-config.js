@@ -145,6 +145,43 @@ const SITE_CONFIG = {
     preserveComments: true
   },
 
+  'zhihu.com': {
+    type: 'discussion',
+    selectors: {
+      main: '.Post-RichTextContainer, .RichContent-inner, .QuestionRichText, .Question-main',
+      comments: '.AnswerItem, .Answer-content, .Comments-list'
+    },
+    preserveComments: true,
+    customExtractor: (selectors) => {
+      // Try to find question or article
+      const main = document.querySelector('.Post-RichTextContainer') || 
+                   document.querySelector('.RichContent-inner') ||
+                   document.querySelector('.QuestionRichText') ||
+                   document.querySelector('.Question-main');
+                   
+      if (main) {
+        const container = document.createElement('div');
+        container.appendChild(main.cloneNode(true));
+        
+        // Add answers if it's a question page
+        const answers = document.querySelectorAll('.AnswerItem, .Answer-content');
+        if (answers.length > 0) {
+          const answersSection = document.createElement('div');
+          answersSection.innerHTML = '<h2>回答</h2>';
+          
+          answers.forEach(answer => {
+            answersSection.appendChild(answer.cloneNode(true));
+          });
+          
+          container.appendChild(answersSection);
+        }
+        
+        return container;
+      }
+      return null;
+    }
+  },
+
   // Article sites - clean reading experience without comments
   '36kr.com': {
     type: 'article',

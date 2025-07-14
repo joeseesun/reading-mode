@@ -1,5 +1,7 @@
 # Reading Mode Browser Extension
 
+> [中文说明](README_CN.md) | English
+
 A powerful browser extension that transforms web pages into clean, distraction-free reading experiences with intelligent content detection and site-specific optimizations.
 
 ![Reading Mode Demo](https://img.shields.io/badge/Chrome-Extension-green)
@@ -56,6 +58,7 @@ A powerful browser extension that transforms web pages into clean, distraction-f
 - Hacker News - Articles and discussions
 - Stack Overflow - Questions and answers
 - Quora - Questions and responses
+- Zhihu - Questions and answers (Chinese)
 
 ### Article Sites (Clean Reading)
 - 36kr.com - Chinese tech news
@@ -143,6 +146,20 @@ cd reading-mode
 # 2. Enable Developer mode
 # 3. Click "Load unpacked" and select this directory
 ```
+
+## Use Cases
+
+### 📰 News Reading
+Get a clean reading experience on sites like 36kr, TechCrunch, removing ads and sidebar distractions.
+
+### 💬 Community Discussions
+Preserve valuable comments and discussions on Reddit, Zhihu, Hacker News while removing irrelevant elements.
+
+### 📝 Blog Articles
+Focus on article content on Medium, personal blogs with elegant typography.
+
+### 🐦 Social Media
+View tweet threads and replies on Twitter/X, filtering out ads and recommendations.
 
 ## License
 
